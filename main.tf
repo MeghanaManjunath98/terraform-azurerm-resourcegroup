@@ -1,8 +1,8 @@
 resource "azurerm_resource_group" "res_group" {
- 
+  location = "${var.location}"
   name     = "${var.name}"
 
-  tags {
+  tags = {
     environment = "Test"
   }
 }
@@ -11,5 +11,4 @@ provider "azurerm" {
   client_id       = "${var.client_id}"
   client_secret   = "${var.client_secret}"
   tenant_id       = "${var.tenant_id}"
-  location        = "${var.location}"
 }
